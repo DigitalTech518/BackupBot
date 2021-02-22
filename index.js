@@ -1,8 +1,9 @@
-const Discord = require('discord.js');
+const config = require("./config.js")
+const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.once('ready', () => {
-	console.log('Backup Bot Ready!');
+client.once("ready", () => {
+	console.log("Backup Bot Ready!");
 });
 
-client.login('ODEzMjMyOTIwNDgyODA3ODQx.YDMULQ.nryrcuWRdKFh7A-BXB79hgZdSgg');
+client.login(config.token);
