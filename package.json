@@ -1,0 +1,15 @@
+{
+  "name": "BackupBot",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "index.js",
+  "repository": "https://github.com/DigitalTech518/BackupBot.git",
+  "author": "Digital_Tech and Deviouslrd",
+  "license": "AGPL-3.0-or-greater",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
