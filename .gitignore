@@ -246,3 +246,4 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/node,yarn,intellij,visualstudiocode
 config.js
 .yarnrc.yml
+config.json
