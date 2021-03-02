@@ -4,7 +4,7 @@ module.exports = {
     name: 'reload',
     aliases: ['r'],
     category: 'dev',
-    execute(message, args) {
+    execute(client, message, args) {
         if (!args.length) return message.channel.send(`No command was passed to reload, ${message.author}`);
 
         const commandName = args[0].toLowerCase();
@@ -12,11 +12,11 @@ module.exports = {
             || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
         const successEmbed = new Discord.MessageEmbed()
-            .setColor('#ffffff')
+            .setColor('#e312b2')
             .setDescription(`Command reloaded: **${command.name}**`);
 
         const notCMDEmbed = new Discord.MessageEmbed()
-            .setColor('#ffffff')
+            .setColor('#e312b2')
             .setDescription(`No command has a name or alias of \`${commandName}\`.`);
 
         if (!command) {
@@ -33,7 +33,7 @@ module.exports = {
             } catch (error) {
                 console.error(error);
                 const failEmbed = new Discord.MessageEmbed()
-                    .setColor('#ffffff')
+                    .setColor('#e312b2')
                     .setDescription(`**Error reloading ${command.name}!** Error shown below: \n\`\`\`${error.message}\`\`\``);
                 message.channel.send(failEmbed);
             }

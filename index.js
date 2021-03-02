@@ -27,12 +27,6 @@ client.on("message", message => {
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const commandName = args.shift().toLowerCase();
-
-	/*if (command === "meep") {
-		message.channel.send("Meep?");
-	} else if (command === "ping") {
-		message.channel.send(`Latency is ${Math.round(client.ws.ping)}ms`)
-	}*/
 	
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -40,7 +34,7 @@ client.on("message", message => {
 	if (!command) return;
 
 	try {
-        command.execute(message, args);
+        command.execute(client, message, args);
     } catch (error) {
         console.error(error);
         message.reply('Error!');
