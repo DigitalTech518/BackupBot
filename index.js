@@ -34,7 +34,7 @@ client.on("message", message => {
 	if (!command) return;
 
 	try {
-        command.execute(client, message, args);
+        command.execute(message, client, args);
     } catch (error) {
         console.error(error);
         message.reply('Error!');
