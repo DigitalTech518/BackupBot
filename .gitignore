@@ -247,3 +247,4 @@ dist
 config.js
 .yarnrc.yml
 config.json
+.eslintrc.json
